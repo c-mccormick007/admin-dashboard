@@ -9,28 +9,40 @@ body {
     height: 100vh;
     max-width: 100%;
     max-height: 100%;
-    grid-template-columns: 1.5fr 5fr;
-    grid-template-rows: .5fr .8fr 5fr;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: .5fr .6fr 5fr;
 }
 
 .sidebar {
     border: 3px solid;
     grid-row: 1 / 4;
     display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 8fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr calc(100% - 1fr);
     align-items: center;
+    justify-items: center;
     text-align: center;
 }
 
 .sidebarHeader {
     font-size: 25px;
-    justify-self: start;
-    text-align: left;
+    padding-left: 10px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
 }
 
 .sbicons {
     align-self: flex-start;
+}
+
+.sbicons ul {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sbicons ul img {
+    flex: 0 0 0;
 }
 
 .dbicon {
@@ -38,20 +50,14 @@ body {
 }
 
 .sboptions {
-    grid-column: 2 / 3;
-    align-self: flex-start;
+    grid-column: 1 / 2;
     font-size: 20px;
-    justify-self: start;
     text-align: left;
 }
 
-.sboptions ul {
-    margin-top: 16px;
-    margin-bottom: 16px;
-}
-
-.sboptions li {
-    margin-bottom: 5px;
+.sidebarHeader, li {
+    display: flex;
+    gap: 10px;
 }
 
 ul {
@@ -137,5 +143,41 @@ ul {
 }
 
 .content {
-    border: 3px solid;
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    grid-template-rows: 1fr 5fr 1fr 5fr;
+    gap: 10px;
+    margin: 10px;
+}
+
+.announcements {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.trending {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+}
+
+.projects {
+    grid-row: 2 / 5;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.colorside {
+    grid-row: 1 / 3;
+    background-color: gray;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 10px 1fr;
+    grid-template-rows: 3fr 1fr;
+}
+
+.cardicons {
+    grid-column: 2 / 3;
 }
